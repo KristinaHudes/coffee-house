@@ -1,0 +1,357 @@
+section {
+  margin-bottom: 100px;
+}
+
+.heading {
+  &-1 {
+    font-size: 7.2rem;
+    line-height: 1.05;
+    font-weight: 600;
+  }
+
+  &-2 {
+    font-size: 6rem;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  &-3 {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+}
+
+.accent {
+  font-style: italic;
+  color: $color-primary;
+}
+
+.btn__primary {
+  &:link,
+  &:visited {
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+    width: 200px;
+    padding: 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: $color-secondary;
+    background: $color-primary-lightest;
+    border-radius: 10rem;
+    transition: all 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 15px);
+      width: 20px;
+      height: 20px;
+      background: url("../assets/icon/coffee-cup.svg") center / cover no-repeat;
+      transform: translateY(-50%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover,
+  &:active {
+    padding-right: 28px;
+
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+}
+
+.btn__round {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: inherit;
+  border: solid 1px $color-secondary-lighter;
+  border-radius: 50%;
+  transition: all 0.3s;
+
+  &--left {
+    left: 0;
+    transform: translate(10%, 10%);
+  }
+
+  &--right {
+    right: 0;
+    transform: translate(-10%, 10%);
+  }
+
+  &--load {
+    position: static;
+    margin: 0 auto;
+    display: none;
+  }
+
+  svg > path {
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: $color-secondary-lighter;
+
+    svg > path {
+      stroke: $color-primary-lightest;
+    }
+  }
+}
+
+.btn__app {
+  &:link,
+  &:visited {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 10px;
+    width: 200px;
+    padding: 12px 20px;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+    border: solid 1px $color-secondary-lighter;
+    border-radius: 10rem;
+    transition: all 0.3s;
+
+    svg {
+      grid-row: 1/-1;
+
+      path {
+        transition: all 0.3s;
+      }
+    }
+
+    span {
+      line-height: 1;
+
+      &:last-child {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &:hover,
+  &:active {
+    color: $color-primary-lightest;
+    background-color: $color-secondary-lighter;
+
+    svg > path {
+      fill: $color-primary-lightest;
+    }
+  }
+}
+
+.btn__social {
+  &:link,
+  &:visited {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: inherit;
+    border: solid 1px $color-primary-lighter;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    svg > path {
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color-primary-lightest;
+
+    svg > path {
+      stroke: $color-secondary;
+    }
+  }
+}
+
+.btn__menu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: none;
+  border-radius: 50%;
+  border: solid 1px $color-secondary-lighter;
+  transform: translateY(-55%);
+  z-index: 200;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 17px;
+    height: 2px;
+    background-color: $color-secondary;
+    transform: translate(-50%, 0);
+    transition: all 0.4s;
+  }
+
+  &::before {
+    top: 16px;
+  }
+
+  &::after {
+    bottom: 16px;
+  }
+
+  &--active {
+    &::before {
+      transform: translate(-50%, 200%) rotate(-135deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -200%) rotate(135deg);
+    }
+  }
+}
+
+.tab {
+  position: relative;
+  height: 46px;
+  padding: 11px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 1.5;
+  font-weight: 600;
+  color: $color-secondary;
+  background-color: transparent;
+  border: solid 1px $color-primary-lighter;
+  border-radius: 10rem;
+  transition: all 0.3s;
+
+  &-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: $color-primary-lighter;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    width: 16px;
+    height: 16px;
+    background: center / contain no-repeat;
+    transform: translateY(-50%);
+  }
+
+  &__name {
+    margin-left: 30px;
+  }
+
+  &--coffee {
+    &::after {
+      background: url("../assets/icon/coffee.svg");
+    }
+  }
+  &--tea {
+    &::after {
+      background: url("../assets/icon/tea.svg");
+    }
+  }
+  &--dessert {
+    &::after {
+      background: url("../assets/icon/dessert.svg");
+    }
+  }
+
+  &--s {
+    &::after {
+      content: "S";
+      color: $color-secondary;
+      transform: translateY(-75%);
+    }
+  }
+
+  &--m {
+    &::after {
+      content: "M";
+      color: $color-secondary;
+      transform: translateY(-75%);
+    }
+  }
+
+  &--l {
+    &::after {
+      content: "L";
+      color: $color-secondary;
+      transform: translateY(-75%);
+    }
+  }
+
+  &--one {
+    &::after {
+      content: "1";
+      color: $color-secondary;
+      transform: translateY(-75%);
+    }
+  }
+
+  &--two {
+    &::after {
+      content: "2";
+      color: $color-secondary;
+      transform: translateY(-75%);
+    }
+  }
+
+  &--three {
+    &::after {
+      content: "3";
+      color: $color-secondary;
+      transform: translateY(-75%);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &--active {
+    color: $color-primary-lightest;
+    background-color: $color-secondary-lighter;
+    border: solid 1px $color-primary-lighter;
+  }
+
+  &--active {
+    cursor: default;
+  }
+}

@@ -1,0 +1,28 @@
+.section-app {
+  margin-bottom: 93px;
+
+  .app {
+    &__text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 40px;
+      padding-bottom: 0.7rem;
+      font-size: 16px;
+    }
+
+    &__btn-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    &__img-box {
+      max-width: 630px;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+}

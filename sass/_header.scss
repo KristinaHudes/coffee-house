@@ -1,0 +1,130 @@
+.header {
+  height: 60px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: $color-secondary;
+
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 59px;
+    &-box {
+      position: relative;
+      z-index: 200;
+    }
+  }
+
+  .nav-box {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    row-gap: 100px;
+  }
+
+  .nav {
+    justify-self: center;
+    &__list {
+      display: flex;
+      column-gap: 40px;
+      row-gap: 60px;
+      padding: 0 2.8rem 0.5rem 0;
+      list-style: none;
+    }
+
+    &__link {
+      &:link,
+      &:visited {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 1px;
+          width: 100%;
+          height: 2px;
+          background-color: $color-secondary;
+          opacity: 0;
+          transition: all 0.3s;
+          transition-timing-function: steps(20, end);
+        }
+      }
+
+      &:hover,
+      &:active {
+        &::before {
+          bottom: -3px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .menu {
+    &-box {
+      position: relative;
+      padding-bottom: 0.5rem;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: -28px;
+        width: 160%;
+        height: 2px;
+        background-color: $color-secondary;
+        opacity: 0;
+        transition: all 0.3s;
+        transition-timing-function: steps(20, end);
+      }
+
+      &:hover,
+      &:active {
+        &::before {
+          bottom: 1px;
+          opacity: 1;
+        }
+      }
+
+      &--active {
+        pointer-events: none;
+
+        &::before {
+          bottom: 1px;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__link {
+      position: relative;
+      left: -28px;
+
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -28px;
+        width: 20px;
+        height: 20px;
+        background: url("../assets/icon/coffee-cup.svg") center / cover
+          no-repeat;
+        transform: translateY(-65%);
+      }
+    }
+  }
+}

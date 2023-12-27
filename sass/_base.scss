@@ -1,0 +1,52 @@
+$color-primary-lightest: #e1d4c9;
+$color-primary-lighter: #c1b6ad;
+$color-primary: #b0907a;
+$color-primary-shade: #463a31;
+$color-secondary-lighter: #665f55;
+$color-secondary: #403f3d;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 20px 40px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $color-secondary;
+  background-color: $color-primary-lightest;
+}
+
+.container {
+  max-width: 136rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 40px;
+
+  &--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.body-fix {
+  overflow: hidden;
+}

@@ -1,0 +1,106 @@
+.footer {
+  .container {
+    padding: 10rem;
+    color: $color-primary-lightest;
+    background-color: $color-secondary-lighter;
+    border: none;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+
+  .accent {
+    display: block;
+  }
+
+  &__social-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__btn-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 40px;
+  }
+
+  &__address-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+    font-size: 16px;
+    font-style: normal;
+
+    span {
+      position: relative;
+      left: 28px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -28px;
+        width: 20px;
+        height: 20px;
+        background: url("../assets/icon/clock.svg") center/cover no-repeat;
+        transform: translateY(-60%);
+      }
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      position: relative;
+      left: 28px;
+      color: inherit;
+      text-decoration: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -28px;
+        width: 20px;
+        height: 20px;
+        background: url("../assets/icon/phone.svg") center/cover no-repeat;
+        transform: translateY(-60%);
+      }
+
+      &:first-child {
+        &::before {
+          background: url("../assets/icon/pin.svg") center/cover no-repeat;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: -28px;
+        width: 120%;
+        height: 2px;
+        background-color: $color-primary-lightest;
+        opacity: 0;
+        transition: all 0.3s;
+        transition-timing-function: steps(20, end);
+      }
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        bottom: -4px;
+        opacity: 1;
+      }
+    }
+  }
+}
